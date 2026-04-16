@@ -1,4 +1,4 @@
-import { ImageWithFallback } from "@/components/figma/ImageWithFallback";
+import { ImageWithFallback } from "@/components/utils/ImageWithFallback";
 
 export function SobreMiPreview() {
   return (
