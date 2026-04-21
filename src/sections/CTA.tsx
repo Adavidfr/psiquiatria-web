@@ -19,8 +19,10 @@ export function CTA() {
         </p>
         <div className="pt-4">
           <a
-            href="#contacto"
-            className="inline-block px-10 py-5 bg-secondary text-secondary-foreground rounded-sm hover:opacity-90 hover:scale-105 transition-all duration-200 text-lg shadow-lg"
+            href="https://wa.me/593969130775?text=Hola, me gustaría agendar una consulta"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block px-8 py-3 bg-secondary text-secondary-foreground rounded-sm hover:opacity-90 hover:scale-105 transition-all duration-200 text-lg shadow-lg"
           >
             Agendar consulta
           </a>

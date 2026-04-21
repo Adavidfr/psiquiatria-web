@@ -1,3 +1,4 @@
+import evaluacionImage from "@/imports/evaluacion.jpg";
 import { ImageWithFallback } from "@/components/utils/ImageWithFallback";
 
 export function PrimeraConsulta() {
@@ -27,7 +28,7 @@ export function PrimeraConsulta() {
           </div>
           <div className="aspect-4/3 rounded-sm overflow-hidden shadow-xl">
             <ImageWithFallback
-              src="https://images.unsplash.com/photo-1650138179459-b32b7fad75a3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080"
+              src={evaluacionImage}
               alt="Espacio de consulta tranquilo y acogedor"
               className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
             />

@@ -1,3 +1,4 @@
+import consultaImage from "@/imports/consulta.jpg";
 import { ImageWithFallback } from "@/components/utils/ImageWithFallback";
 
 export function CuandoBuscarAyuda() {
@@ -19,7 +20,7 @@ export function CuandoBuscarAyuda() {
           <div className="order-2 lg:order-1">
             <div className="aspect-4/3 rounded-sm overflow-hidden shadow-xl">
               <ImageWithFallback
-                src="https://images.unsplash.com/photo-1760692558301-fb97bd974861?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080"
+                src={consultaImage}
                 alt="Persona encontrando paz y calma"
                 className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
               />

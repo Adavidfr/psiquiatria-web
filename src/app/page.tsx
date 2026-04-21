@@ -14,7 +14,7 @@ export default function Page() {
   return (
     <>
       <PageLoader />
-      <div className="min-h-screen">
+      <div className="relative min-h-screen">
         <Navbar />
         <main>
           <Hero />

@@ -1,3 +1,4 @@
+import aboutImage from "@/imports/about.jpg";
 import { ImageWithFallback } from "@/components/utils/ImageWithFallback";
 
 export function SobreMiPreview() {
@@ -10,7 +11,7 @@ export function SobreMiPreview() {
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           <div className="aspect-3/4 rounded-sm overflow-hidden shadow-xl">
             <ImageWithFallback
-              src="https://images.unsplash.com/photo-1714976694756-28bf07af3758?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080"
+              src={aboutImage}
               alt="Profesional de salud mental"
               className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
             />
@@ -37,7 +38,7 @@ export function SobreMiPreview() {
             <div className="pt-4">
               <a
                 href="#contacto"
-                className="inline-block px-8 py-4 border border-primary text-primary rounded-sm hover:bg-primary hover:text-primary-foreground hover:scale-105 transition-all duration-200"
+                className="inline-block px-8 py-3 border border-primary text-primary rounded-sm hover:bg-primary hover:text-primary-foreground hover:scale-105 transition-all duration-200"
               >
                 Conocer más
               </a>

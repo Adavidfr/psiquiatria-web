@@ -5,9 +5,9 @@
   --font-serif: 'Cormorant Garamond', serif;
   --font-sans: 'Karla', sans-serif;
 
-  --color-terracota: #C89B8B;
-  --color-verde-oscuro: #5D6D6E;
-  --color-beige: #F5F2ED;
+  --color-terracota: #b5806a;
+  --color-verde-oscuro: #495A58;
+  --color-beige: #DCD9D0;
   --color-offwhite: #FAFAF8;
   --color-dark: #2A2A2A;
 
@@ -17,23 +17,23 @@
   --card-foreground: #2A2A2A;
   --popover: #ffffff;
   --popover-foreground: #2A2A2A;
-  --primary: #5D6D6E;
+  --primary: #495A58;
   --primary-foreground: #FAFAF8;
-  --secondary: #C89B8B;
+  --secondary: #b5806a;
   --secondary-foreground: #FAFAF8;
-  --muted: #F5F2ED;
-  --muted-foreground: #5D6D6E;
-  --accent: #C89B8B;
+  --muted: #DCD9D0;
+  --muted-foreground: #495A58;
+  --accent: #b5806a;
   --accent-foreground: #FAFAF8;
   --destructive: #d4183d;
   --destructive-foreground: #ffffff;
-  --border: rgba(93, 109, 110, 0.15);
+  --border: rgba(73, 90, 88, 0.15);
   --input: transparent;
-  --input-background: #F5F2ED;
+  --input-background: #DCD9D0;
   --switch-background: #cbced4;
   --font-weight-medium: 500;
   --font-weight-normal: 400;
-  --ring: #5D6D6E;
+  --ring: #495A58;
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
   --chart-3: oklch(0.398 0.07 227.392);

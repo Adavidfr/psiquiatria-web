@@ -15,7 +15,7 @@ export function Footer() {
             <div className="space-y-4">
               <div className="flex items-start gap-3 group">
                 <MapPin className="w-5 h-5 text-secondary mt-0.5 shrink-0 group-hover:scale-110 transition-transform" />
-                <p className="text-foreground">Ciudad</p>
+                <p className="text-foreground">Quito - Ecuador</p>
               </div>
               <div className="flex items-start gap-3 group">
                 <Phone className="w-5 h-5 text-secondary mt-0.5 shrink-0 group-hover:scale-110 transition-transform" />
