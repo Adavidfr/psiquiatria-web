@@ -22,7 +22,7 @@ export function CTA() {
             href="https://wa.me/593969130775?text=Hola, me gustaría agendar una consulta"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block px-8 py-3 bg-secondary text-secondary-foreground rounded-sm hover:opacity-90 hover:scale-105 transition-all duration-200 text-lg shadow-lg"
+            className="inline-block px-6 py-2 bg-secondary text-secondary-foreground rounded-sm hover:opacity-90 hover:scale-105 transition-all duration-200 text-base shadow-lg"
           >
             Agendar consulta
           </a>

@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
+import logo from "@/imports/logo.png";
 
 export function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -24,13 +25,14 @@ export function Navbar() {
     { label: "Atención clínica", href: "#atencion-clinica" },
     { label: "Salud mental", href: "#salud-mental" },
     { label: "Adolescentes", href: "#adolescentes" },
+    { label: "Adultos Jóvenes", href: "#adultos-jovenes" },
     { label: "Familias", href: "#familias" },
     { label: "Contacto", href: "#contacto" },
   ];
 
   return (
     <nav
-      className={`absolute top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
           ? "bg-offwhite shadow-lg"
           : "bg-transparent backdrop-blur-none"
@@ -41,17 +43,25 @@ export function Navbar() {
           <div className="flex-shrink-0">
             <a
               href="#inicio"
-              className={`text-2xl font-serif transition-opacity ${
+              className={`flex items-center gap-1 text-2xl font-serif transition-opacity ${
                 isScrolled ? "text-primary" : "text-white"
               }`}
             >
-              Dra. Alejandra Castillo
+              <img
+                src={logo}
+                alt="Logo Dra. Alejandra Castillo"
+                className="w-14 h-14 object-contain mix-blend-multiply"
+              />
+              <span className={`block sm:hidden ml-2 text-lg font-serif transition-opacity ${isScrolled ? "text-primary" : "text-white"}`}>
+                NODO
+              </span>
+              <span className="hidden sm:block"> N O D O</span>
             </a>
           </div>
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center space-x-10">
-            {menuItems.slice(0, 6).map((item) => (
+            {menuItems.map((item) => (
               <a
                 key={item.label}
                 href={item.href}
@@ -65,32 +75,8 @@ export function Navbar() {
             ))}
           </div>
 
-          {/* CTA Button */}
-          <div className="hidden lg:block">
-            <a
-              href="https://wa.me/593969130775?text=Hola, me gustaría agendar una consulta"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={`px-8 py-3 rounded-sm hover:scale-105 transition-all duration-200 font-medium text-sm tracking-wide ${
-                isScrolled
-                  ? "bg-secondary text-secondary-foreground"
-                  : "bg-secondary text-secondary-foreground"
-              }`}
-            >
-              RESERVAR CITA
-            </a>
-          </div>
-
           {/* Mobile Menu Button */}
           <div className="lg:hidden flex items-center space-x-4">
-            <a
-              href="https://wa.me/5939691307755?text=Hola, me gustaría agendar una consulta"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={`px-4 py-2 bg-secondary text-secondary-foreground rounded-sm text-sm hover:scale-105 transition-all font-medium`}
-            >
-              Agendar
-            </a>
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className={`p-2 transition-colors ${

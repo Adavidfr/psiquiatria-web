@@ -38,7 +38,7 @@ export function SobreMiPreview() {
             <div className="pt-4">
               <a
                 href="#contacto"
-                className="inline-block px-8 py-3 border border-primary text-primary rounded-sm hover:bg-primary hover:text-primary-foreground hover:scale-105 transition-all duration-200"
+                className="inline-block px-6 py-2 border border-primary text-primary rounded-sm hover:bg-primary hover:text-primary-foreground hover:scale-105 transition-all duration-200"
               >
                 Conocer más
               </a>
