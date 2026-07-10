@@ -59,9 +59,9 @@ export function Footer() {
       {/* Formulario de contacto */}
       <div className="py-10 px-4 sm:px-6 lg:px-8 border-b border-primary/10">
         <div className="max-w-6xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-16 items-start">
+          <div className="grid md:grid-cols-2 gap-10 lg:gap-16 items-start">
             {/* Texto izquierdo */}
-            <div className="flex-1 pr-0 md:pr-10 pb-10 md:pb-0 space-y-6">
+            <div className="space-y-6 pb-2 md:pb-0">
               <h2 className="font-serif text-4xl md:text-5xl text-foreground leading-tight">
                 Hablemos
               </h2>
@@ -92,7 +92,7 @@ export function Footer() {
             </div>
 
             {/* Formulario derecho */}
-            <div className="flex-1 pl-0 md:pl-10 bg-offwhite/60 backdrop-blur-sm rounded-sm p-8 shadow-sm border border-primary/8">
+            <div className="bg-offwhite/60 backdrop-blur-sm rounded-sm p-6 sm:p-8 shadow-sm border border-primary/8">
               {submitted ? (
                 <div className="flex flex-col items-center justify-center py-12 gap-4 text-center animate-fade-in">
                   <CheckCircle className="w-14 h-14 text-secondary" />
@@ -222,8 +222,8 @@ export function Footer() {
       {/* Footer inferior */}
       <div className="py-6 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-[1fr_auto_1fr] gap-0 mb-6 items-start">
-            <div className="pr-8">
+          <div className="flex flex-col sm:grid sm:grid-cols-[1fr_auto_1fr] gap-0 mb-6 items-start">
+            <div className="sm:pr-8">
               <h3 className="font-serif text-xl mb-5 text-foreground">
                 Modalidad
               </h3>
@@ -247,16 +247,16 @@ export function Footer() {
               </ul>
             </div>
 
-            {/* Divisor centrado */}
-            <div className="flex justify-center pt-1">
+            {/* Divisor centrado — oculto en móvil */}
+            <div className="hidden sm:flex justify-center pt-1">
               <div className="w-px h-28 bg-primary/15" />
             </div>
 
-            <div className="pl-8">
+            <div className="sm:pl-8 mt-8 sm:mt-0">
               <h3 className="font-serif text-xl mb-5 text-foreground">
                 Información
               </h3>
-              <p className="text-foreground text-sm leading-relaxed bg-offwhite/50 p-4 rounded-sm border-l-2 border-secondary max-w-[59%]">
+              <p className="text-foreground text-sm leading-relaxed bg-offwhite/50 p-4 rounded-sm border-l-2 border-secondary max-w-full sm:max-w-[80%]">
                 Este sitio no reemplaza atención de emergencia. En caso de
                 crisis o riesgo inmediato, acude a un servicio de urgencias.
               </p>
@@ -270,12 +270,19 @@ export function Footer() {
         style={{ backgroundColor: "#495A58" }}
         className="py-2 px-4"
       >
-        <p className="text-center text-xs flex items-center justify-center gap-2"
-           style={{ color: "rgba(255,255,255,0.85)" }}>
-          <span>
+        <p
+          className="text-center text-[10px] sm:text-xs flex flex-row items-center justify-center gap-1.5 whitespace-nowrap"
+          style={{ color: "rgba(255,255,255,0.85)" }}
+        >
+          {/* Versión corta en móvil */}
+          <span className="sm:hidden">
+            © {new Date().getFullYear()} NODO | Alejandra Castillo M.D.
+          </span>
+          {/* Versión completa en sm+ */}
+          <span className="hidden sm:inline">
             © {new Date().getFullYear()} NODO | Network-Based Psychiatry by Alejandra Castillo M.D.
           </span>
-          <Heart className="w-3 h-3 text-secondary" />
+          <Heart className="w-3 h-3 text-secondary flex-shrink-0" />
         </p>
       </div>
     </footer>
