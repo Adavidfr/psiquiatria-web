@@ -1,0 +1,11 @@
+# robots.txt — Nodo | Consultorio de Psiquiatría
+# Cuando obtengas tu dominio, reemplaza PLACEHOLDER-DOMAIN.com con tu dominio real.
+
+User-agent: *
+Allow: /
+
+# Bloquear archivos de configuración y assets de build
+Disallow: /src/
+Disallow: /.env
+
+Sitemap: https://PLACEHOLDER-DOMAIN.com/sitemap.xml

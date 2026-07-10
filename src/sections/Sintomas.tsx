@@ -12,7 +12,7 @@ export function Sintomas() {
   ];
 
   return (
-    <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-beige">
+    <section id="sintomas" className="py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-beige">
       <div className="max-w-5xl mx-auto">
         <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-center mb-12 md:mb-16 text-foreground">
           Tal vez te estás sintiendo así…

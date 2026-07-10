@@ -57,11 +57,11 @@ export function Footer() {
       className="bg-beige border-t border-primary/10"
     >
       {/* Formulario de contacto */}
-      <div className="py-20 px-4 sm:px-6 lg:px-8 border-b border-primary/10">
+      <div className="py-10 px-4 sm:px-6 lg:px-8 border-b border-primary/10">
         <div className="max-w-6xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-16 items-start">
             {/* Texto izquierdo */}
-            <div className="space-y-6">
+            <div className="flex-1 pr-0 md:pr-10 pb-10 md:pb-0 space-y-6">
               <h2 className="font-serif text-4xl md:text-5xl text-foreground leading-tight">
                 Hablemos
               </h2>
@@ -92,7 +92,7 @@ export function Footer() {
             </div>
 
             {/* Formulario derecho */}
-            <div className="bg-offwhite/60 backdrop-blur-sm rounded-sm p-8 shadow-sm border border-primary/8">
+            <div className="flex-1 pl-0 md:pl-10 bg-offwhite/60 backdrop-blur-sm rounded-sm p-8 shadow-sm border border-primary/8">
               {submitted ? (
                 <div className="flex flex-col items-center justify-center py-12 gap-4 text-center animate-fade-in">
                   <CheckCircle className="w-14 h-14 text-secondary" />
@@ -220,10 +220,10 @@ export function Footer() {
       </div>
 
       {/* Footer inferior */}
-      <div className="py-12 px-4 sm:px-6 lg:px-8">
+      <div className="py-6 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
-          <div className="grid md:grid-cols-3 gap-12 mb-10">
-            <div>
+          <div className="grid grid-cols-[1fr_auto_1fr] gap-0 mb-6 items-start">
+            <div className="pr-8">
               <h3 className="font-serif text-xl mb-5 text-foreground">
                 Modalidad
               </h3>
@@ -236,56 +236,47 @@ export function Footer() {
                   <span className="w-1.5 h-1.5 bg-secondary rounded-full"></span>
                   Atención virtual
                 </li>
+                <li className="flex items-center gap-2">
+                  <span className="w-1.5 h-1.5 bg-secondary rounded-full"></span>
+                  Atención a domicilio
+                </li>
+                <li className="flex items-center gap-2">
+                  <span className="w-1.5 h-1.5 bg-secondary rounded-full"></span>
+                  Emergencias psiquiátricas
+                </li>
               </ul>
             </div>
 
-            <div>
-              <h3 className="font-serif text-xl mb-5 text-foreground">
-                Navegación
-              </h3>
-              <ul className="space-y-3">
-                {["#inicio", "#sobre-mi", "#atencion-clinica", "#contacto"].map(
-                  (href, i) => (
-                    <li key={href}>
-                      <a
-                        href={href}
-                        className="text-foreground hover:text-primary hover:translate-x-1 inline-block transition-all"
-                      >
-                        {
-                          [
-                            "Inicio",
-                            "Sobre mí",
-                            "Atención clínica",
-                            "Contacto",
-                          ][i]
-                        }
-                      </a>
-                    </li>
-                  ),
-                )}
-              </ul>
+            {/* Divisor centrado */}
+            <div className="flex justify-center pt-1">
+              <div className="w-px h-28 bg-primary/15" />
             </div>
 
-            <div>
+            <div className="pl-8">
               <h3 className="font-serif text-xl mb-5 text-foreground">
                 Información
               </h3>
-              <p className="text-foreground text-sm leading-relaxed bg-offwhite/50 p-4 rounded-sm border-l-2 border-secondary">
+              <p className="text-foreground text-sm leading-relaxed bg-offwhite/50 p-4 rounded-sm border-l-2 border-secondary max-w-[59%]">
                 Este sitio no reemplaza atención de emergencia. En caso de
                 crisis o riesgo inmediato, acude a un servicio de urgencias.
               </p>
             </div>
           </div>
-
-          <div className="border-t border-primary/20 pt-8 text-center">
-            <p className="text-muted-foreground text-sm flex items-center justify-center gap-2">
-              <span>
-                © {new Date().getFullYear()} - Atención en Psiquiatría
-              </span>
-              <Heart className="w-4 h-4 text-secondary" />
-            </p>
-          </div>
         </div>
+      </div>
+
+      {/* Barra inferior delgada */}
+      <div
+        style={{ backgroundColor: "#495A58" }}
+        className="py-2 px-4"
+      >
+        <p className="text-center text-xs flex items-center justify-center gap-2"
+           style={{ color: "rgba(255,255,255,0.85)" }}>
+          <span>
+            © {new Date().getFullYear()} NODO | Network-Based Psychiatry by Alejandra Castillo M.D.
+          </span>
+          <Heart className="w-3 h-3 text-secondary" />
+        </p>
       </div>
     </footer>
   );

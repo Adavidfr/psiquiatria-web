@@ -9,6 +9,7 @@ import { CuandoBuscarAyuda } from "@/sections/CuandoBuscarAyuda";
 import { SobreMiPreview } from "@/sections/SobreMiPreview";
 import { PrimeraConsulta } from "@/sections/PrimeraConsulta";
 import { CTA } from "@/sections/CTA";
+import { FilosofiaBanner } from "@/sections/FilosofiaBanner";
 
 export default function Page() {
   return (
@@ -18,6 +19,7 @@ export default function Page() {
         <Navbar />
         <main>
           <Hero />
+          <FilosofiaBanner />
           <Sintomas />
           <ComoAyudo />
           <CuandoBuscarAyuda />

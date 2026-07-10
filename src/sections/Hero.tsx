@@ -10,8 +10,10 @@ export function Hero() {
       <div className="absolute inset-0 z-0">
         <img
           src={heroImage}
-          alt="Persona joven sintiendo libertad y paz"
+          alt="Persona joven sintiendo libertad y paz mental"
           className="w-full h-full object-cover"
+          fetchPriority="high"
+          decoding="async"
         />
         {/* Overlay oscuro para legibilidad */}
         <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-transparent"></div>
@@ -24,15 +26,15 @@ export function Hero() {
             className="font-serif text-3xl md:text-4xl lg:text-5xl leading-tight text-white/80"
             style={{ animationDelay: "0.2s" }}
           >
-            Comprender lo que te pasa es el primer paso para sentirte mejor.
+            Comprender la mente como una red neuronal
           </h1>
           <p
             className="text-lg md:text-xl text-white/90 leading-relaxed opacity-0 animate-fade-in mt-16"
             style={{ animationDelay: "0.4s" }}
           >
-            Atención en psiquiatría para adolescentes y adultos jóvenes.
-            Evaluación clara, tratamiento basado en evidencia y un espacio
-            seguro para hablar de lo que estás viviendo.
+            NODO integra neurociencia, desarrollo humano e historia personal
+            para la práctica de una psiquiatría profunda, personalizada y basada
+            en evidencia.
           </p>
           <div
             className="flex flex-col sm:flex-row gap-4 opacity-0 animate-fade-in mt-8"

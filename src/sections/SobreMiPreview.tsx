@@ -1,4 +1,5 @@
 import aboutImage from "@/imports/about.jpg";
+import firmaImage from "@/imports/firma.png";
 import { ImageWithFallback } from "@/components/utils/ImageWithFallback";
 
 export function SobreMiPreview() {
@@ -12,7 +13,7 @@ export function SobreMiPreview() {
           <div className="aspect-3/4 rounded-sm overflow-hidden shadow-xl">
             <ImageWithFallback
               src={aboutImage}
-              alt="Profesional de salud mental"
+              alt="Médica psiquiatra especializada en adolescentes y adultos jóvenes en Quito"
               className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
             />
           </div>
@@ -20,29 +21,38 @@ export function SobreMiPreview() {
             <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-foreground">
               Sobre mí
             </h2>
-            <div className="space-y-4 text-lg text-foreground leading-relaxed">
+            <div className="space-y-4 text-lg text-foreground leading-relaxed text-justify">
               <p>
-                Soy médica psiquiatra enfocada en el abordaje de la salud mental
-                en adolescentes y adultos jóvenes.
+                Soy Génesis Alejandra Castillo, médico psiquiatra con una visión
+                clínica orientada a la integración entre la neurociencia, el
+                desarrollo humano y la historia de vida de cada persona.
               </p>
               <p>
-                Mi trabajo combina la medicina basada en evidencia con una
-                comprensión profunda de la experiencia emocional de cada
-                paciente.
+                Mi práctica se fundamenta en comprender la salud mental desde
+                una perspectiva de Network-Based Psychiatry, entendiendo que la
+                experiencia emocional emerge de la interacción dinámica entre
+                los circuitos cerebrales, el desarrollo, los vínculos, las
+                experiencias vitales y el contexto en el que cada individuo ha
+                construido su historia.
               </p>
               <p>
-                Creo en una psiquiatría clara, respetuosa y humana, donde
-                entender lo que te ocurre es tan importante como tratarlo.
+                Mi trabajo se centra en comprender la complejidad de cada
+                persona desde una mirada científica, ética y profundamente
+                humana, evitando aproximaciones reduccionistas y promoviendo una
+                psiquiatría contemporánea, precisa, personalizada y basada en
+                evidencia.
               </p>
             </div>
-            <div className="pt-4">
-              <a
-                href="#contacto"
-                className="inline-block px-6 py-2 border border-primary text-primary rounded-sm hover:bg-primary hover:text-primary-foreground hover:scale-105 transition-all duration-200"
-              >
-                Conocer más
-              </a>
+
+            {/* Firma */}
+            <div className="pt-2 flex justify-end">
+              <img
+                src={firmaImage}
+                alt="Firma Dra. Alejandra Castillo"
+                className="h-18 w-auto object-contain opacity-80"
+              />
             </div>
+
           </div>
         </div>
       </div>

@@ -29,7 +29,7 @@ export function PrimeraConsulta() {
           <div className="aspect-4/3 rounded-sm overflow-hidden shadow-xl">
             <ImageWithFallback
               src={evaluacionImage}
-              alt="Espacio de consulta tranquilo y acogedor"
+              alt="Consultorio de psiquiatría: espacio tranquilo y acogedor para la primera consulta"
               className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
             />
           </div>
