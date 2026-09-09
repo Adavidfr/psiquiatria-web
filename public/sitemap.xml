@@ -3,7 +3,7 @@
 
   <!-- Página principal -->
   <url>
-    <loc>https://PLACEHOLDER-DOMAIN.com/</loc>
+    <loc>https://nodopsiquiatria.com/</loc>
     <lastmod>2026-06-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
@@ -11,7 +11,7 @@
 
   <!-- Sección: Inicio -->
   <url>
-    <loc>https://PLACEHOLDER-DOMAIN.com/#inicio</loc>
+    <loc>https://nodopsiquiatria.com/#inicio</loc>
     <lastmod>2026-06-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
@@ -19,7 +19,7 @@
 
   <!-- Sección: Sobre mí -->
   <url>
-    <loc>https://PLACEHOLDER-DOMAIN.com/#sobre-mi</loc>
+    <loc>https://nodopsiquiatria.com/#sobre-mi</loc>
     <lastmod>2026-06-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -27,7 +27,7 @@
 
   <!-- Sección: Atención clínica (Cómo ayudo) -->
   <url>
-    <loc>https://PLACEHOLDER-DOMAIN.com/#atencion-clinica</loc>
+    <loc>https://nodopsiquiatria.com/#atencion-clinica</loc>
     <lastmod>2026-06-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -35,7 +35,7 @@
 
   <!-- Sección: Salud mental (¿Cuándo buscar ayuda?) -->
   <url>
-    <loc>https://PLACEHOLDER-DOMAIN.com/#salud-mental</loc>
+    <loc>https://nodopsiquiatria.com/#salud-mental</loc>
     <lastmod>2026-06-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -43,7 +43,7 @@
 
   <!-- Sección: Adolescentes (Primera consulta) -->
   <url>
-    <loc>https://PLACEHOLDER-DOMAIN.com/#adolescentes</loc>
+    <loc>https://nodopsiquiatria.com/#adolescentes</loc>
     <lastmod>2026-06-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -51,7 +51,7 @@
 
   <!-- Sección: Familias (CTA) -->
   <url>
-    <loc>https://PLACEHOLDER-DOMAIN.com/#familias</loc>
+    <loc>https://nodopsiquiatria.com/#familias</loc>
     <lastmod>2026-06-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -59,7 +59,7 @@
 
   <!-- Sección: Contacto (Footer) -->
   <url>
-    <loc>https://PLACEHOLDER-DOMAIN.com/#contacto</loc>
+    <loc>https://nodopsiquiatria.com/#contacto</loc>
     <lastmod>2026-06-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
