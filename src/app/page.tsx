@@ -3,29 +3,27 @@ import { Footer } from "@/components/Footer";
 import { PageLoader } from "@/components/PageLoader";
 import { FloatingCTA } from "@/components/FloatingCTA";
 import { Hero } from "@/sections/Hero";
-import { Sintomas } from "@/sections/Sintomas";
-import { ComoAyudo } from "@/sections/ComoAyudo";
-import { CuandoBuscarAyuda } from "@/sections/CuandoBuscarAyuda";
+import { Pilares } from "@/sections/Pilares";
+import { EnfoqueYServicios } from "@/sections/EnfoqueYServicios";
 import { SobreMiPreview } from "@/sections/SobreMiPreview";
-import { PrimeraConsulta } from "@/sections/PrimeraConsulta";
+import { HomoSapiens } from "@/sections/HomoSapiens";
 import { CTA } from "@/sections/CTA";
-import { FilosofiaBanner } from "@/sections/FilosofiaBanner";
+import { ContactoSection } from "@/sections/ContactoSection";
 
 export default function Page() {
   return (
     <>
       <PageLoader />
-      <div className="relative min-h-screen">
+      <div className="relative min-h-screen bg-[#F5F2EC] text-[#10253F] selection:bg-[#C8A46A]/20 selection:text-[#10253F]">
         <Navbar />
         <main>
           <Hero />
-          <FilosofiaBanner />
-          <Sintomas />
-          <ComoAyudo />
-          <CuandoBuscarAyuda />
+          <Pilares />
+          <EnfoqueYServicios />
           <SobreMiPreview />
-          <PrimeraConsulta />
+          <HomoSapiens />
           <CTA />
+          <ContactoSection />
         </main>
         <Footer />
         <FloatingCTA />

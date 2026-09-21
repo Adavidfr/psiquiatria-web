@@ -1,285 +1,162 @@
-import { useState, useEffect, useRef } from "react";
-import { Menu, X, ChevronDown } from "lucide-react";
+import { useState, useEffect } from "react";
+import { Menu, X, ArrowRight } from "lucide-react";
 import logo from "@/imports/logo.png";
-
-const homoSapiensItems = [
-  { label: "Adolescentes", href: "#" },
-  { label: "Adultos Jóvenes", href: "#" },
-  { label: "Adultos Mayores", href: "#" },
-  { label: "Familias", href: "#" },
-];
 
 export function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-  const [isMobileDropdownOpen, setIsMobileDropdownOpen] = useState(false);
-  const dropdownRef = useRef<HTMLDivElement>(null);
+  const [activeSection, setActiveSection] = useState("inicio");
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 10);
+      setIsScrolled(window.scrollY > 20);
+
+      const sections = ["inicio", "sobre-mi", "enfoque-nodo", "servicios", "homo-sapiens", "recursos", "contacto"];
+      const current = sections.find((section) => {
+        const el = document.getElementById(section);
+        if (el) {
+          const rect = el.getBoundingClientRect();
+          return rect.top <= 120 && rect.bottom >= 120;
+        }
+        return false;
+      });
+      if (current) setActiveSection(current);
     };
+
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Close dropdown on outside click
-  useEffect(() => {
-    const handleClickOutside = (e: MouseEvent) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
-        setIsDropdownOpen(false);
-      }
-    };
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => document.removeEventListener("mousedown", handleClickOutside);
-  }, []);
-
-  const menuItems = [
-    { label: "Inicio", href: "#inicio" },
-    { label: "Sobre mí", href: "#sobre-mi" },
-    { label: "Servicios", href: "#atencion-clinica" },
-    { label: "Salud mental", href: "#salud-mental" },
+  const navItems = [
+    { label: "Inicio", href: "#inicio", id: "inicio" },
+    { label: "Sobre mí", href: "#sobre-mi", id: "sobre-mi" },
+    { label: "Enfoque NODO", href: "#enfoque-nodo", id: "enfoque-nodo" },
+    { label: "Servicios", href: "#servicios", id: "servicios" },
+    { label: "Homo sapiens", href: "#homo-sapiens", id: "homo-sapiens" },
+    { label: "Recursos", href: "#homo-sapiens", id: "recursos" },
+    { label: "Contacto", href: "#contacto", id: "contacto" },
   ];
 
-  const contactoItem = { label: "Contacto", href: "#contacto" };
-
-  const linkClass = `transition-colors duration-200 relative group text-sm font-medium ${
-    isScrolled ? "text-foreground" : "text-white"
-  }`;
-
   return (
-    <nav
+    <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? "bg-offwhite shadow-lg"
-          : "bg-transparent backdrop-blur-none"
-      } border-b ${isScrolled ? "border-border" : "border-transparent"}`}
+          ? "bg-[#F5F2EC]/95 backdrop-blur-md shadow-sm py-3 border-b border-[#10253F]/10"
+          : "bg-[#F5F2EC] py-4"
+      }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-20">
-          <div className="flex-shrink-0">
-            <a
-              href="#inicio"
-              aria-label="Ir al inicio - NODO Psiquiatría"
-              className="flex items-center gap-2 sm:gap-3 group select-none"
-            >
-              {/* Ícono de red neuronal */}
-              <img
-                src={logo}
-                alt="Logo NODO red neuronal"
-                className="w-11 h-11 sm:w-16 sm:h-16 object-contain flex-shrink-0"
-                style={{ filter: isScrolled ? "none" : "brightness(0) invert(1)" }}
-              />
-
-              {/* Bloque de texto del logo */}
-              <div className="flex flex-col">
-                {/* N O D O */}
-                <span
-                  className="font-serif transition-colors duration-300"
-                  style={{
-                    color: isScrolled ? "#1a2744" : "#ffffff",
-                    fontFamily: "'Playfair Display', 'Georgia', serif",
-                    fontSize: "clamp(1.05rem, 4vw, 1.65rem)",
-                    letterSpacing: "0.38em",
-                    lineHeight: 1,
-                  }}
-                >
-                  NODO
-                </span>
-
-                {/* NETWORK-BASED PSYCHIATRY */}
-                <span
-                  className="uppercase font-medium transition-colors duration-300"
-                  style={{
-                    color: isScrolled ? "#1a2744" : "rgba(255,255,255,0.85)",
-                    fontFamily: "'Inter', 'Helvetica Neue', sans-serif",
-                    fontSize: "clamp(0.45rem, 1.8vw, 0.72rem)",
-                    letterSpacing: "0.18em",
-                    lineHeight: 1,
-                    marginTop: "2px",
-                  }}
-                >
-                  Network-Based Psychiatry
-                </span>
-
-                {/* by Alejandra Castillo */}
-                <span
-                  className="italic transition-colors duration-300"
-                  style={{
-                    color: isScrolled ? "#b59a5e" : "rgba(255,255,255,0.75)",
-                    fontFamily: "'Playfair Display', 'Georgia', serif",
-                    fontSize: "clamp(0.6rem, 2vw, 0.8rem)",
-                    letterSpacing: "0.2em",
-                    lineHeight: 1,
-                    marginTop: "3px",
-                  }}
-                >
-                  by Alejandra Castillo M.D.
-                </span>
-              </div>
-            </a>
-          </div>
-
-          {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center space-x-10">
-            {menuItems.map((item) => (
-              <a key={item.label} href={item.href} className={linkClass}>
-                {item.label}
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-secondary transition-all duration-300 group-hover:w-full"></span>
-              </a>
-            ))}
-
-            {/* Homosapiens Dropdown */}
-            <div className="relative" ref={dropdownRef}>
-              <button
-                id="homosapiens-dropdown-btn"
-                onClick={() => setIsDropdownOpen((prev) => !prev)}
-                className={`flex items-center gap-1 text-sm font-medium transition-colors duration-200 relative group ${
-                  isScrolled ? "text-foreground" : "text-white"
-                }`}
-                aria-haspopup="true"
-                aria-expanded={isDropdownOpen}
+      <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between">
+          {/* Logo Brand */}
+          <a
+            href="#inicio"
+            aria-label="NODO - Inicio"
+            className="flex items-center gap-3 group select-none"
+          >
+            <img
+              src={logo}
+              alt="Logo NODO"
+              className="w-10 h-10 sm:w-11 sm:h-11 object-contain flex-shrink-0 transition-transform duration-300 group-hover:scale-105"
+            />
+            <div className="flex flex-col">
+              <span
+                className="font-serif text-[#10253F] tracking-[0.35em] text-base sm:text-lg font-normal leading-tight"
+                style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
               >
-                Homosapiens
-                <ChevronDown
-                  size={15}
-                  className={`transition-transform duration-300 ${isDropdownOpen ? "rotate-180" : "rotate-0"}`}
-                />
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-secondary transition-all duration-300 group-hover:w-full"></span>
-              </button>
-
-              {/* Dropdown Panel */}
-              <div
-                className={`absolute top-full right-0 mt-3 w-52 rounded-xl shadow-2xl border overflow-hidden transition-all duration-300 origin-top ${
-                  isDropdownOpen
-                    ? "opacity-100 scale-100 translate-y-0 pointer-events-auto"
-                    : "opacity-0 scale-95 -translate-y-2 pointer-events-none"
-                }`}
-                style={{
-                  background: "rgba(255,255,255,0.97)",
-                  borderColor: "rgba(181,154,94,0.25)",
-                  backdropFilter: "blur(12px)",
-                }}
+                NODO
+              </span>
+              <span className="text-[#10253F]/80 text-[8px] sm:text-[9px] tracking-[0.18em] uppercase font-semibold leading-tight">
+                NETWORK-BASED PSYCHIATRY
+              </span>
+              <span
+                className="italic text-[#C8A46A] text-[10px] sm:text-[11px] leading-tight font-serif"
+                style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
               >
-                {homoSapiensItems.map((item, i) => (
-                  <a
-                    key={item.label}
-                    href={item.href}
-                    onClick={() => setIsDropdownOpen(false)}
-                    className="flex items-center gap-3 px-5 py-3 text-sm font-medium text-gray-700 transition-colors duration-150 group"
-                    style={{
-                      borderBottom: i < homoSapiensItems.length - 1 ? "1px solid rgba(181,154,94,0.15)" : "none",
-                    }}
-                    onMouseEnter={e => { e.currentTarget.style.backgroundColor = '#f0efec'; e.currentTarget.style.color = '#AA7C68'; (e.currentTarget.querySelector('span') as HTMLElement).style.backgroundColor = '#AA7C68'; }}
-                    onMouseLeave={e => { e.currentTarget.style.backgroundColor = ''; e.currentTarget.style.color = ''; (e.currentTarget.querySelector('span') as HTMLElement).style.backgroundColor = ''; }}
-                  >
-                    <span
-                      className="w-1.5 h-1.5 rounded-full bg-gray-300 opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex-shrink-0"
-                    />
-                    {item.label}
-                </a>
-                ))}
-              </div>
+                by Alejandra Castillo
+              </span>
             </div>
+          </a>
 
-            {/* Contacto - último ítem */}
-            <a href={contactoItem.href} className={linkClass}>
-              {contactoItem.label}
-              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-secondary transition-all duration-300 group-hover:w-full"></span>
+          {/* Desktop Nav Links */}
+          <nav className="hidden xl:flex items-center space-x-7">
+            {navItems.map((item) => {
+              const isActive = activeSection === item.id;
+              return (
+                <a
+                  key={item.label}
+                  href={item.href}
+                  className={`text-[13px] font-medium transition-colors relative py-1 ${
+                    isActive
+                      ? "text-[#10253F] font-semibold"
+                      : "text-[#10253F]/75 hover:text-[#10253F]"
+                  }`}
+                >
+                  {item.label}
+                  {isActive && (
+                    <span className="absolute bottom-0 left-0 right-0 h-[2px] bg-[#C8A46A] rounded-full animate-fade-in" />
+                  )}
+                </a>
+              );
+            })}
+          </nav>
+
+          {/* Right Action Button */}
+          <div className="hidden sm:flex items-center gap-4">
+            <a
+              href="https://wa.me/593969130775?text=Hola,%20me%20gustar%C3%ADa%20agendar%20una%20cita%20con%20NODO%20Psiquiatr%C3%ADa"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 bg-[#10253F] text-[#F5F2EC] hover:bg-[#10253F]/90 text-[13px] font-medium px-5 py-2.5 rounded-full transition-all duration-200 shadow-sm hover:shadow hover:scale-[1.02]"
+            >
+              <span>Agendar cita</span>
+              <ArrowRight className="w-3.5 h-3.5" />
             </a>
           </div>
 
           {/* Mobile Menu Button */}
-          <div className="lg:hidden flex items-center space-x-4">
+          <div className="xl:hidden flex items-center">
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className={`p-2 transition-colors ${
-                isScrolled ? "text-foreground" : "text-white"
-              }`}
-              aria-label="Toggle menu"
+              className="p-2 text-[#10253F] hover:bg-[#10253F]/5 rounded-lg transition-colors"
+              aria-label="Abrir menú"
             >
-              {isMenuOpen ? <X size={24} aria-hidden="true" /> : <Menu size={24} aria-hidden="true" />}
+              {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
           </div>
         </div>
       </div>
 
-      {/* Mobile Menu */}
+      {/* Mobile Dropdown */}
       <div
-        className={`lg:hidden transition-all duration-300 overflow-hidden ${
-          isMenuOpen ? "max-h-screen opacity-100" : "max-h-0 opacity-0"
-        } ${isScrolled ? "bg-offwhite border-b border-border" : "bg-black/50 backdrop-blur-sm border-b border-transparent"}`}
+        className={`xl:hidden transition-all duration-300 overflow-hidden bg-[#F5F2EC] border-b border-[#10253F]/10 ${
+          isMenuOpen ? "max-h-[480px] opacity-100 py-4 shadow-lg" : "max-h-0 opacity-0 py-0"
+        }`}
       >
-        <div className="px-4 pt-2 pb-6 space-y-1">
-          {menuItems.map((item, index) => (
+        <div className="max-w-[1280px] mx-auto px-4 sm:px-6 space-y-2">
+          {navItems.map((item) => (
             <a
               key={item.label}
               href={item.href}
               onClick={() => setIsMenuOpen(false)}
-              className={`block py-2 transition-all duration-200 opacity-0 animate-fade-in text-sm font-medium ${
-                isScrolled ? "text-foreground" : "text-white"
-              }`}
-              style={{ animationDelay: `${index * 0.05}s` }}
+              className="block py-2 text-sm font-medium text-[#10253F]/85 hover:text-[#10253F] hover:bg-[#10253F]/5 px-3 rounded-md transition-colors"
             >
               {item.label}
             </a>
           ))}
-
-          {/* Mobile Homosapiens Dropdown */}
-          <div>
-            <button
-              id="homosapiens-mobile-btn"
-              onClick={() => setIsMobileDropdownOpen((prev) => !prev)}
-              className={`w-full flex items-center justify-between py-2 text-sm font-medium transition-colors duration-200 ${
-                isScrolled ? "text-foreground" : "text-white"
-              }`}
-              style={{ animationDelay: `${menuItems.length * 0.05}s` }}
+          <div className="pt-2">
+            <a
+              href="https://wa.me/593969130775?text=Hola,%20me%20gustar%C3%ADa%20agendar%20una%20cita%20con%20NODO%20Psiquiatr%C3%ADa"
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => setIsMenuOpen(false)}
+              className="flex items-center justify-center gap-2 w-full bg-[#10253F] text-[#F5F2EC] text-sm font-medium py-2.5 rounded-full mt-2"
             >
-              Homosapiens
-              <ChevronDown
-                size={15}
-                className={`transition-transform duration-300 ${isMobileDropdownOpen ? "rotate-180" : "rotate-0"}`}
-              />
-            </button>
-
-            <div
-              className={`overflow-hidden transition-all duration-300 ${
-                isMobileDropdownOpen ? "max-h-60 opacity-100" : "max-h-0 opacity-0"
-              }`}
-            >
-              <div className="pl-4 pt-1 pb-2 space-y-1 border-l-2 border-amber-400/40 ml-2">
-                {homoSapiensItems.map((item) => (
-                  <a
-                    key={item.label}
-                    href={item.href}
-                    onClick={() => {
-                      setIsMenuOpen(false);
-                      setIsMobileDropdownOpen(false);
-                    }}
-                    className={`block py-1.5 text-sm transition-colors duration-150 ${
-                      isScrolled ? "text-foreground/80 hover:text-foreground" : "text-white/80 hover:text-white"
-                    }`}
-                  >
-                    {item.label}
-                  </a>
-                ))}
-              </div>
-            </div>
+              <span>Agendar cita</span>
+              <ArrowRight className="w-4 h-4" />
+            </a>
           </div>
-
-          {/* Mobile Contacto - último ítem */}
-          <a
-            href={contactoItem.href}
-            onClick={() => setIsMenuOpen(false)}
-            className={`block py-2 text-sm font-medium transition-colors duration-200 ${
-              isScrolled ? "text-foreground" : "text-white"
-            }`}
-          >
-            {contactoItem.label}
-          </a>
         </div>
       </div>
-    </nav>
+    </header>
   );
 }
