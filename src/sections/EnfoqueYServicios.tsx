@@ -99,56 +99,56 @@ export function EnfoqueYServicios() {
               <div className="absolute h-[1px] w-full bg-gradient-to-r from-transparent via-[#C8A46A]/40 to-transparent" />
 
               {/* NODO CENTRAL */}
-              <div className="relative z-10 w-20 h-20 sm:w-22 sm:h-22 rounded-full bg-white shadow-md border border-[#10253F]/10 flex flex-col items-center justify-center text-center p-2 group hover:scale-105 transition-transform">
+              <div className="relative z-10 w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-white shadow-md border border-[#10253F]/10 flex flex-col items-center justify-center text-center p-2 group hover:scale-105 transition-transform">
                 <img
                   src={logo}
                   alt="NODO Center"
-                  className="w-8 h-8 object-contain"
+                  className="w-9 h-9 object-contain"
                 />
-                <span className="text-[10px] font-bold tracking-widest text-[#10253F] mt-0.5">
+                <span className="text-[11px] font-bold tracking-widest text-[#10253F] mt-0.5">
                   NODO
                 </span>
               </div>
 
               {/* NODO SUPERIOR: Neurociencia clínica */}
-              <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/4 flex flex-col items-center text-center w-40 z-10">
-                <div className="w-10 h-10 rounded-full bg-white shadow-sm border border-[#10253F]/10 flex items-center justify-center text-[#C8A46A] mb-1">
-                  <Brain className="w-5 h-5 stroke-[1.5]" />
+              <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/4 flex flex-col items-center text-center w-44 z-10">
+                <div className="w-12 h-12 rounded-full bg-white shadow-md border border-[#10253F]/10 flex items-center justify-center text-[#C8A46A] mb-1.5 transition-transform hover:scale-110">
+                  <Brain className="w-6 h-6 stroke-[1.75]" />
                 </div>
-                <span className="text-[11px] font-semibold text-[#10253F] leading-tight">
+                <span className="text-xs sm:text-[13px] font-semibold text-[#10253F] leading-tight">
                   Neurociencia clínica
                 </span>
-                <span className="text-[9px] text-[#10253F]/60 leading-tight hidden sm:block max-w-[130px]">
+                <span className="text-[10px] text-[#10253F]/65 leading-tight hidden sm:block max-w-[140px] mt-0.5">
                   Redes cerebrales, plasticidad y funcionamiento cognitivo.
                 </span>
               </div>
 
               {/* NODO DERECHO: Contexto y vínculos */}
-              <div className="absolute right-0 top-1/2 translate-x-1/4 -translate-y-1/2 flex flex-col items-center text-center w-28 z-10">
-                <div className="w-10 h-10 rounded-full bg-white shadow-sm border border-[#10253F]/10 flex items-center justify-center text-[#C8A46A] mb-1">
-                  <Users className="w-5 h-5 stroke-[1.5]" />
+              <div className="absolute right-0 top-1/2 translate-x-1/4 -translate-y-1/2 flex flex-col items-center text-center w-32 sm:w-36 z-10">
+                <div className="w-12 h-12 rounded-full bg-white shadow-md border border-[#10253F]/10 flex items-center justify-center text-[#C8A46A] mb-1.5 transition-transform hover:scale-110">
+                  <Users className="w-6 h-6 stroke-[1.75]" />
                 </div>
-                <span className="text-[11px] font-semibold text-[#10253F] leading-tight">
+                <span className="text-xs sm:text-[13px] font-semibold text-[#10253F] leading-tight">
                   Contexto y vínculos
                 </span>
               </div>
 
               {/* NODO INFERIOR: Tratamiento personalizado */}
-              <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/4 flex flex-col items-center text-center w-36 z-10">
-                <div className="w-10 h-10 rounded-full bg-white shadow-sm border border-[#10253F]/10 flex items-center justify-center text-[#C8A46A] mb-1">
-                  <Sparkles className="w-5 h-5 stroke-[1.5]" />
+              <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/4 flex flex-col items-center text-center w-40 sm:w-44 z-10">
+                <div className="w-12 h-12 rounded-full bg-white shadow-md border border-[#10253F]/10 flex items-center justify-center text-[#C8A46A] mb-1.5 transition-transform hover:scale-110">
+                  <Sparkles className="w-6 h-6 stroke-[1.75]" />
                 </div>
-                <span className="text-[11px] font-semibold text-[#10253F] leading-tight">
+                <span className="text-xs sm:text-[13px] font-semibold text-[#10253F] leading-tight">
                   Tratamiento personalizado
                 </span>
               </div>
 
               {/* NODO IZQUIERDO: Historia de vida */}
-              <div className="absolute left-0 top-1/2 -translate-x-1/4 -translate-y-1/2 flex flex-col items-center text-center w-28 z-10">
-                <div className="w-10 h-10 rounded-full bg-white shadow-sm border border-[#10253F]/10 flex items-center justify-center text-[#C8A46A] mb-1">
-                  <User className="w-5 h-5 stroke-[1.5]" />
+              <div className="absolute left-0 top-1/2 -translate-x-1/4 -translate-y-1/2 flex flex-col items-center text-center w-32 sm:w-36 z-10">
+                <div className="w-12 h-12 rounded-full bg-white shadow-md border border-[#10253F]/10 flex items-center justify-center text-[#C8A46A] mb-1.5 transition-transform hover:scale-110">
+                  <User className="w-6 h-6 stroke-[1.75]" />
                 </div>
-                <span className="text-[11px] font-semibold text-[#10253F] leading-tight">
+                <span className="text-xs sm:text-[13px] font-semibold text-[#10253F] leading-tight">
                   Historia de vida
                 </span>
               </div>

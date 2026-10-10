@@ -1,5 +1,5 @@
-import { ArrowRight } from "lucide-react";
-import heroImage from "@/imports/hero2.jpg";
+import { ArrowRight, ArrowDown } from "lucide-react";
+import { HeroArte } from "@/components/HeroArte";
 
 export function Hero() {
   return (
@@ -7,15 +7,9 @@ export function Hero() {
       id="inicio"
       className="relative min-h-screen w-full flex items-center pt-24 pb-16 lg:py-0 overflow-hidden bg-[#F5F2EC]"
     >
-      {/* Background Image: Pantalla completa (Full Screen) */}
+      {/* Fondo animado por capas: fondo → silueta → manchas → red de puntos */}
       <div className="absolute inset-0 z-0">
-        <img
-          src={heroImage}
-          alt="NODO - Red neuronal y mente humana"
-          className="w-full h-full object-cover object-center lg:object-right opacity-90 contrast-[1.03]"
-          fetchPriority="high"
-          decoding="async"
-        />
+        <HeroArte className="opacity-90" />
         {/* Overlay degradado ligero para apreciar la ilustración de red neuronal */}
         <div className="absolute inset-0 bg-gradient-to-r from-[#F5F2EC]/75 via-[#F5F2EC]/40 to-transparent" />
       </div>
@@ -68,16 +62,17 @@ export function Hero() {
             </div>
 
             {/* Indicador de scroll */}
-            <div className="pt-8 sm:pt-12 flex items-center gap-3">
+            <div className="pt-8 sm:pt-12 flex items-center gap-2.5">
               <div className="w-[1.5px] h-7 bg-[#C8A46A]" />
               <span className="text-[10px] tracking-[0.18em] uppercase text-[#10253F]/65 font-semibold">
                 Desliza para explorar
               </span>
+              <ArrowDown className="w-3.5 h-3.5 text-[#C8A46A] animate-bounce" />
             </div>
           </div>
 
           {/* Columna Derecha: Tags y Frase Superior Derecha */}
-          <div className="lg:col-span-5 flex flex-col justify-start items-end text-right self-start lg:pt-8 pointer-events-none select-none">
+          <div className="lg:col-span-5 flex flex-col justify-start items-end text-right self-start lg:pt-8 pointer-events-none select-none translate-x-[2mm] translate-y-[6mm]">
             <div className="space-y-1.5 text-[10px] sm:text-[11px] font-bold tracking-[0.22em] text-[#10253F]/80 uppercase bg-[#F5F2EC]/40 sm:bg-transparent backdrop-blur-xs sm:backdrop-blur-none p-3 sm:p-0 rounded-lg">
               <div>CEREBRO</div>
               <div>EXPERIENCIAS</div>

@@ -8,6 +8,7 @@ import {
 } from "lucide-react";
 import aboutImage from "@/imports/about.jpg";
 import firmaImage from "@/imports/firma.png";
+import plantaImage from "@/imports/planta.png";
 import { ImageWithFallback } from "@/components/utils/ImageWithFallback";
 
 export function SobreMiPreview() {
@@ -37,9 +38,19 @@ export function SobreMiPreview() {
   return (
     <section
       id="sobre-mi"
-      className="py-16 sm:py-24 bg-[#FAF8F5] border-t border-[#10253F]/10 overflow-hidden"
+      className="relative py-16 sm:py-24 bg-[#FAF8F5] border-t border-[#10253F]/10 overflow-hidden"
     >
-      <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Marca de agua botánica anclada abajo a la derecha, desplazada hacia la derecha */}
+      <div className="absolute -bottom-4 right-0 translate-x-[20%] w-48 sm:w-56 lg:w-64 pointer-events-none select-none z-0 opacity-40 sm:opacity-45 mix-blend-multiply">
+        <img
+          src={plantaImage}
+          alt=""
+          role="presentation"
+          className="w-full h-auto object-contain object-bottom-right filter contrast-[0.65] brightness-[1.03]"
+        />
+      </div>
+
+      <div className="relative z-10 max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-12 gap-10 lg:gap-14 items-start">
           {/* Columna Izquierda: Imagen del alto de la sección */}
           <div className="lg:col-span-5 lg:sticky lg:top-24">
