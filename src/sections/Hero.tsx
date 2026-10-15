@@ -16,9 +16,9 @@ export function Hero() {
 
       {/* Contenido sobre la imagen */}
       <div className="relative z-10 max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 w-full">
-        <div className="grid lg:grid-cols-12 gap-8 items-center min-h-[calc(100vh-6rem)] py-12">
-          {/* Columna Izquierda: Textos y Acciones */}
-          <div className="lg:col-span-7 space-y-6 sm:space-y-8 animate-fade-in">
+        <div className="grid lg:grid-cols-12 gap-8 items-center min-h-[calc(100vh-6rem)] py-6 sm:py-12">
+          {/* Columna Izquierda: Textos y Acciones (en mobile se ubica debajo del bloque de palabras clave) */}
+          <div className="order-2 lg:order-1 lg:col-span-7 space-y-6 sm:space-y-8 animate-fade-in">
             {/* Kicker */}
             <div className="flex items-center gap-2">
               <span className="text-[10px] sm:text-[11px] font-bold tracking-[0.25em] text-[#10253F]/80 uppercase">
@@ -71,16 +71,16 @@ export function Hero() {
             </div>
           </div>
 
-          {/* Columna Derecha: Tags y Frase Superior Derecha */}
-          <div className="lg:col-span-5 flex flex-col justify-start items-end text-right self-start lg:pt-8 pointer-events-none select-none translate-x-[2mm] translate-y-[6mm]">
-            <div className="space-y-1.5 text-[10px] sm:text-[11px] font-bold tracking-[0.22em] text-[#10253F]/80 uppercase bg-[#F5F2EC]/40 sm:bg-transparent backdrop-blur-xs sm:backdrop-blur-none p-3 sm:p-0 rounded-lg">
+          {/* Columna Derecha / En mobile: Al inicio y alineado a la izquierda */}
+          <div className="order-1 lg:order-2 lg:col-span-5 flex flex-col justify-start items-start text-left lg:items-end lg:text-right self-start lg:pt-8 pointer-events-none select-none lg:translate-x-[2mm] lg:translate-y-[6mm]">
+            <div className="space-y-1.5 text-[10px] sm:text-[11px] font-bold tracking-[0.22em] text-[#10253F]/80 uppercase">
               <div>CEREBRO</div>
               <div>EXPERIENCIAS</div>
               <div>VÍNCULOS</div>
               <div>CONTEXTO</div>
               <div>PERSONA</div>
             </div>
-            <div className="w-10 sm:w-12 h-[1.5px] bg-[#C8A46A] my-3 ml-auto" />
+            <div className="w-10 sm:w-12 h-[1.5px] bg-[#C8A46A] my-3 mr-auto lg:mr-0 lg:ml-auto" />
             <div
               className="font-serif italic text-sm sm:text-base text-[#10253F]/90 max-w-[200px]"
               style={{ fontFamily: "'Playfair Display', Georgia, serif" }}

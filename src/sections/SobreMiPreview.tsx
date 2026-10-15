@@ -52,16 +52,14 @@ export function SobreMiPreview() {
 
       <div className="relative z-10 max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-12 gap-10 lg:gap-14 items-start">
-          {/* Columna Izquierda: Imagen del alto de la sección */}
-          <div className="lg:col-span-5 lg:sticky lg:top-24">
-            <div className="relative w-full h-[450px] sm:h-[550px] lg:h-[720px] rounded-2xl overflow-hidden shadow-xl border border-[#10253F]/10 group">
+          {/* Columna Izquierda: Imagen del alto de la sección (solo desktop) */}
+          <div className="hidden lg:block lg:col-span-5 lg:sticky lg:top-24">
+            <div className="relative w-full h-[450px] sm:h-[550px] lg:h-[720px] rounded-2xl overflow-hidden shadow-xl border border-[#10253F]/10">
               <ImageWithFallback
                 src={aboutImage}
                 alt="Dra. Alejandra Castillo - Médico Psiquiatra"
-                className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700"
+                className="w-full h-full object-cover object-top"
               />
-              {/* Overlay sutil inferior con gradiente */}
-              <div className="absolute inset-0 bg-gradient-to-t from-[#10253F]/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             </div>
           </div>
 
@@ -93,6 +91,17 @@ export function SobreMiPreview() {
                   Creo en una psiquiatría que escucha, que integra la ciencia con la experiencia humana 
                   y que entiende que cada persona es una historia única.
                 </p>
+              </div>
+
+              {/* Imagen visible SOLO en mobile: colocada después de "Creo en una psiquiatría que escucha", sin recortar */}
+              <div className="block lg:hidden pt-2">
+                <div className="relative w-full rounded-2xl overflow-hidden shadow-xl border border-[#10253F]/10">
+                  <ImageWithFallback
+                    src={aboutImage}
+                    alt="Dra. Alejandra Castillo - Médico Psiquiatra"
+                    className="w-full h-auto object-contain block"
+                  />
+                </div>
               </div>
             </div>
 
