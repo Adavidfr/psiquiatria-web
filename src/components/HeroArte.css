@@ -1,0 +1,224 @@
+/* ---------------------------------------------------------------
+   HeroArte: aparición por capas + movimiento sutil permanente
+   Secuencia (a velocidad normal, --v: 1):
+     0.0s  fondo
+     0.3s  silueta (lavado de base, con desenfoque que se enfoca)
+     0.9s  manchas (pigmento que se absorbe)
+     1.8s  red de puntos (se expande desde la cara)
+   Luego: manchas y red derivan unos pocos píxeles, para siempre.
+   --------------------------------------------------------------- */
+
+/* Permite animar el radio de la máscara de la red */
+@property --revela {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 100%;
+}
+
+.hero-arte {
+  /* Ajustes rápidos */
+  --fondo: #f5f2ec;
+  /* mismo fondo del hero del sitio (la imagen original usaba #fbf6f0) */
+  --v: 0.8;
+  /* velocidad de la secuencia: 1 = original, menor = más rápida */
+  --desenfoque: 14px;
+  /* desenfoque inicial de las capas */
+  --posicion: center;
+  /* qué parte de la imagen se ve al recortar (celular/tablet) */
+  --curva: cubic-bezier(0.22, 0.61, 0.36, 1);
+
+  --scroll: 0;
+  /* lo actualiza el componente (modo "scroll"): 0 = arriba, 1 = hero ya pasó */
+
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.hero-arte::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--fondo);
+}
+
+.hero-arte__capa {
+  position: absolute;
+  inset: 0;
+}
+
+/* Contenedor que recibe el efecto del scroll (separado de la entrada y del
+   movimiento permanente para que los tres efectos no se pisen). */
+.hero-arte__par {
+  position: absolute;
+  inset: 0;
+}
+
+/* La imagen es un poco más grande que el contenedor para que al moverse
+   nunca se vea el borde. */
+.hero-arte__img {
+  position: absolute;
+  inset: -12px;
+  width: calc(100% + 24px);
+  height: calc(100% + 24px);
+  max-width: none;
+  /* anula el max-width:100% del preflight de Tailwind */
+  object-fit: cover;
+  object-position: var(--posicion);
+  user-select: none;
+}
+
+.hero-arte__capa--silueta {
+  --blur: var(--desenfoque);
+  --escala: 1.04;
+}
+
+.hero-arte__capa--manchas {
+  --blur: calc(var(--desenfoque) * 0.7);
+  --escala: 1.05;
+}
+
+/* Todo lo animado vive aquí: si la persona pidió menos movimiento,
+   ve la imagen final, quieta y completa. */
+@media (prefers-reduced-motion: no-preference) {
+
+  /* Antes de que carguen las imágenes, todo oculto */
+  .hero-arte:not(.hero-arte--lista)::before,
+  .hero-arte:not(.hero-arte--lista) .hero-arte__capa {
+    opacity: 0;
+  }
+
+  /* 1. Fondo */
+  .hero-arte--lista::before {
+    animation: hero-aparece calc(0.6s * var(--v)) var(--curva) both;
+  }
+
+  /* 2. Silueta */
+  .hero-arte--lista .hero-arte__capa--silueta {
+    animation: hero-entra calc(1.8s * var(--v)) var(--curva) calc(0.3s * var(--v)) both;
+  }
+
+  /* 3. Manchas */
+  .hero-arte--lista .hero-arte__capa--manchas {
+    animation: hero-entra calc(1.8s * var(--v)) var(--curva) calc(0.9s * var(--v)) both;
+  }
+
+  /* 4. Red: se revela desde la cara hacia afuera */
+  .hero-arte--lista .hero-arte__capa--red {
+    -webkit-mask-image: radial-gradient(circle farthest-corner at 58% 44%,
+        #000 var(--revela),
+        transparent calc(var(--revela) + 22%));
+    mask-image: radial-gradient(circle farthest-corner at 58% 44%,
+        #000 var(--revela),
+        transparent calc(var(--revela) + 22%));
+    animation:
+      hero-revela calc(2.4s * var(--v)) var(--curva) calc(1.8s * var(--v)) both,
+      hero-aparece calc(1.2s * var(--v)) ease-out calc(1.8s * var(--v)) both;
+  }
+
+  /* Movimiento permanente: muy lento, en sentidos opuestos.
+     Solo usa transform, así que corre en la GPU y casi no gasta batería. */
+  .hero-arte--lista .hero-arte__img--manchas {
+    animation: hero-deriva-manchas 17s ease-in-out calc(2.4s * var(--v)) infinite alternate;
+    will-change: transform;
+  }
+
+  .hero-arte--lista .hero-arte__img--red {
+    transform-origin: 60% 45%;
+    animation: hero-deriva-red 23s ease-in-out calc(3.6s * var(--v)) infinite alternate;
+    will-change: transform;
+  }
+}
+
+/* Modo "scroll": al bajar, cada capa se desvanece y se desplaza a distinta
+   velocidad (la red primero, la silueta al final). Al subir, vuelven.
+   opacity ya recorta los valores a 0-1, por eso las cuentas pueden pasarse. */
+@media (prefers-reduced-motion: no-preference) {
+  .hero-arte__capa--silueta .hero-arte__par {
+    opacity: calc(1.5 - var(--scroll) * 1.5);
+    transform: translate3d(0, calc(var(--scroll) * 90px), 0);
+    will-change: transform, opacity;
+  }
+
+  .hero-arte__capa--manchas .hero-arte__par {
+    opacity: calc(1.25 - var(--scroll) * 1.5);
+    transform: translate3d(0, calc(var(--scroll) * 60px), 0);
+    will-change: transform, opacity;
+  }
+
+  .hero-arte__capa--red .hero-arte__par {
+    opacity: calc(1 - var(--scroll) * 2);
+    transform: translate3d(0, calc(var(--scroll) * 25px), 0);
+    will-change: transform, opacity;
+  }
+}
+
+@keyframes hero-aparece {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes hero-entra {
+  from {
+    opacity: 0;
+    filter: blur(var(--blur));
+    transform: scale(var(--escala));
+  }
+
+  to {
+    opacity: 1;
+    filter: none;
+    transform: scale(1);
+  }
+}
+
+@keyframes hero-revela {
+  from {
+    --revela: -22%;
+  }
+
+  to {
+    --revela: 100%;
+  }
+}
+
+@keyframes hero-deriva-manchas {
+  from {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+
+  to {
+    transform: translate3d(6px, -5px, 0) scale(1.014);
+  }
+}
+
+@keyframes hero-deriva-red {
+  from {
+    transform: translate3d(0, 0, 0) rotate(0deg) scale(1);
+  }
+
+  to {
+    transform: translate3d(-5px, 4px, 0) rotate(0.35deg) scale(1.008);
+  }
+}
+
+/* Escritorio (lg de Tailwind, 1024px): figura pegada a la derecha */
+@media (min-width: 1024px) {
+  .hero-arte {
+    --posicion: right center;
+  }
+}
+
+/* Celular: secuencia un poco más corta y menos desenfoque */
+@media (max-width: 768px) {
+  .hero-arte {
+    --v: 0.65;
+    --desenfoque: 8px;
+  }
+}

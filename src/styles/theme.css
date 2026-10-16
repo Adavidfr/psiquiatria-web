@@ -2,97 +2,46 @@
 
 :root {
   --font-size: 16px;
-  --font-serif: 'Cormorant Garamond', serif;
-  --font-sans: 'Karla', sans-serif;
+  --font-serif: 'Playfair Display', 'Cormorant Garamond', Georgia, serif;
+  --font-sans: 'Inter', 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
 
-  --color-terracota: #b5806a;
-  --color-verde-oscuro: #495A58;
-  --color-beige: #DCD9D0;
-  --color-offwhite: #FAFAF8;
-  --color-dark: #2A2A2A;
+  --nodo-navy: #10253F;
+  --nodo-ivory: #F5F2EC;
+  --nodo-gold: #C8A46A;
+  --nodo-sage: #2E463B;
+  --nodo-stone: #B8B7B2;
 
-  --background: #FAFAF8;
-  --foreground: #2A2A2A;
-  --card: #ffffff;
-  --card-foreground: #2A2A2A;
-  --popover: #ffffff;
-  --popover-foreground: #2A2A2A;
-  --primary: #495A58;
-  --primary-foreground: #FAFAF8;
-  --secondary: #b5806a;
-  --secondary-foreground: #FAFAF8;
-  --muted: #DCD9D0;
-  --muted-foreground: #495A58;
-  --accent: #b5806a;
-  --accent-foreground: #FAFAF8;
+  --container: 1280px;
+  --radius-button: 8px;
+
+  --background: #F5F2EC;
+  --foreground: #10253F;
+  --card: #FFFFFF;
+  --card-foreground: #10253F;
+  --popover: #FFFFFF;
+  --popover-foreground: #10253F;
+  --primary: #10253F;
+  --primary-foreground: #F5F2EC;
+  --secondary: #C8A46A;
+  --secondary-foreground: #FFFFFF;
+  --muted: #E8E4DC;
+  --muted-foreground: #10253F;
+  --accent: #C8A46A;
+  --accent-foreground: #FFFFFF;
   --destructive: #d4183d;
-  --destructive-foreground: #ffffff;
-  --border: rgba(73, 90, 88, 0.15);
-  --input: transparent;
-  --input-background: #DCD9D0;
-  --switch-background: #cbced4;
-  --font-weight-medium: 500;
-  --font-weight-normal: 400;
-  --ring: #495A58;
-  --chart-1: oklch(0.646 0.222 41.116);
-  --chart-2: oklch(0.6 0.118 184.704);
-  --chart-3: oklch(0.398 0.07 227.392);
-  --chart-4: oklch(0.828 0.189 84.429);
-  --chart-5: oklch(0.769 0.188 70.08);
-  --radius: 0.625rem;
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: #030213;
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.97 0 0);
-  --sidebar-accent-foreground: oklch(0.205 0 0);
-  --sidebar-border: oklch(0.922 0 0);
-  --sidebar-ring: oklch(0.708 0 0);
-}
-
-.dark {
-  --background: oklch(0.145 0 0);
-  --foreground: oklch(0.985 0 0);
-  --card: oklch(0.145 0 0);
-  --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.145 0 0);
-  --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.985 0 0);
-  --primary-foreground: oklch(0.205 0 0);
-  --secondary: oklch(0.269 0 0);
-  --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.269 0 0);
-  --muted-foreground: oklch(0.708 0 0);
-  --accent: oklch(0.269 0 0);
-  --accent-foreground: oklch(0.985 0 0);
-  --destructive: oklch(0.396 0.141 25.723);
-  --destructive-foreground: oklch(0.637 0.237 25.331);
-  --border: oklch(0.269 0 0);
-  --input: oklch(0.269 0 0);
-  --ring: oklch(0.439 0 0);
-  --font-weight-medium: 500;
-  --font-weight-normal: 400;
-  --chart-1: oklch(0.488 0.243 264.376);
-  --chart-2: oklch(0.696 0.17 162.48);
-  --chart-3: oklch(0.769 0.188 70.08);
-  --chart-4: oklch(0.627 0.265 303.9);
-  --chart-5: oklch(0.645 0.246 16.439);
-  --sidebar: oklch(0.205 0 0);
-  --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.269 0 0);
-  --sidebar-accent-foreground: oklch(0.985 0 0);
-  --sidebar-border: oklch(0.269 0 0);
-  --sidebar-ring: oklch(0.439 0 0);
+  --destructive-foreground: #FFFFFF;
+  --border: rgba(16, 37, 63, 0.12);
+  --ring: #C8A46A;
+  --radius: 0.5rem;
 }
 
 @theme inline {
-  --color-terracota: var(--color-terracota);
-  --color-verde-oscuro: var(--color-verde-oscuro);
-  --color-beige: var(--color-beige);
-  --color-offwhite: var(--color-offwhite);
-  --color-dark: var(--color-dark);
+  --color-nodo-navy: var(--nodo-navy);
+  --color-nodo-ivory: var(--nodo-ivory);
+  --color-nodo-gold: var(--nodo-gold);
+  --color-nodo-sage: var(--nodo-sage);
+  --color-nodo-stone: var(--nodo-stone);
+
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -110,146 +59,66 @@
   --color-destructive: var(--destructive);
   --color-destructive-foreground: var(--destructive-foreground);
   --color-border: var(--border);
-  --color-input: var(--input);
-  --color-input-background: var(--input-background);
-  --color-switch-background: var(--switch-background);
   --color-ring: var(--ring);
-  --color-chart-1: var(--chart-1);
-  --color-chart-2: var(--chart-2);
-  --color-chart-3: var(--chart-3);
-  --color-chart-4: var(--chart-4);
-  --color-chart-5: var(--chart-5);
-  --radius-sm: calc(var(--radius) - 4px);
-  --radius-md: calc(var(--radius) - 2px);
-  --radius-lg: var(--radius);
-  --radius-xl: calc(var(--radius) + 4px);
-  --color-sidebar: var(--sidebar);
-  --color-sidebar-foreground: var(--sidebar-foreground);
-  --color-sidebar-primary: var(--sidebar-primary);
-  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
-  --color-sidebar-accent: var(--sidebar-accent);
-  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
-  --color-sidebar-border: var(--sidebar-border);
-  --color-sidebar-ring: var(--sidebar-ring);
-  --font-family-serif: var(--font-serif);
-  --font-family-sans: var(--font-sans);
+
+  --font-serif: var(--font-serif);
+  --font-sans: var(--font-sans);
 }
 
 @layer base {
   * {
-    @apply border-border outline-ring/50;
+    border-color: var(--border);
   }
 
   html {
     scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+    font-size: var(--font-size);
+    background-color: var(--nodo-ivory);
+    color: var(--nodo-navy);
   }
 
   body {
-    @apply bg-background text-foreground;
+    background-color: var(--nodo-ivory);
+    color: var(--nodo-navy);
     font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
   }
 
-  /**
-  * Default typography styles for HTML elements (h1-h4, p, label, button, input).
-  * These are in @layer base, so Tailwind utility classes (like text-sm, text-lg) automatically override them.
-  */
-
-  html {
-    font-size: var(--font-size);
-  }
-
-  h1 {
+  h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-serif);
-    font-size: var(--text-2xl);
-    font-weight: var(--font-weight-medium);
-    line-height: 1.5;
+    color: var(--nodo-navy);
   }
+}
 
-  h2 {
-    font-family: var(--font-serif);
-    font-size: var(--text-xl);
-    font-weight: var(--font-weight-medium);
-    line-height: 1.5;
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
   }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
-  h3 {
-    font-family: var(--font-serif);
-    font-size: var(--text-lg);
-    font-weight: var(--font-weight-medium);
-    line-height: 1.5;
+@keyframes pulseGlow {
+  0%, 100% {
+    opacity: 0.4;
+    transform: scale(1);
   }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.05);
+  }
+}
 
-  h4 {
-    font-size: var(--text-base);
-    font-weight: var(--font-weight-medium);
-    line-height: 1.5;
-  }
+.animate-fade-in {
+  animation: fadeIn 0.8s ease-out forwards;
+}
 
-  label {
-    font-size: var(--text-base);
-    font-weight: var(--font-weight-medium);
-    line-height: 1.5;
-  }
-
-  button {
-    font-size: var(--text-base);
-    font-weight: var(--font-weight-medium);
-    line-height: 1.5;
-  }
-
-  input {
-    font-size: var(--text-base);
-    font-weight: var(--font-weight-normal);
-    line-height: 1.5;
-  }
-
-  @keyframes fade-in {
-    from {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  @keyframes fade-in-up {
-    from {
-      opacity: 0;
-      transform: translateY(30px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  @keyframes scale-in {
-    from {
-      opacity: 0;
-      transform: scale(0.95);
-    }
-    to {
-      opacity: 1;
-      transform: scale(1);
-    }
-  }
-
-  .animate-fade-in {
-    animation: fade-in 0.8s ease-out forwards;
-  }
-
-  .animate-fade-in-up {
-    animation: fade-in-up 1s ease-out forwards;
-  }
-
-  .animate-scale-in {
-    animation: scale-in 0.6s ease-out forwards;
-  }
-
-  /* Smooth scrolling with offset for fixed navbar */
-  html {
-    scroll-padding-top: 5rem;
-  }
+.animate-pulse-glow {
+  animation: pulseGlow 4s ease-in-out infinite;
 }
