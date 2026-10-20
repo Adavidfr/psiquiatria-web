@@ -2,7 +2,6 @@ import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { FloatingCTA } from "@/components/FloatingCTA";
 import { Hero } from "@/sections/Hero";
-import { Pilares } from "@/sections/Pilares";
 import { EnfoqueYServicios } from "@/sections/EnfoqueYServicios";
 import { SobreMiPreview } from "@/sections/SobreMiPreview";
 import { HomoSapiens } from "@/sections/HomoSapiens";
@@ -15,10 +14,9 @@ export default function Page() {
       <Navbar />
       <main>
         <Hero />
-        <Pilares />
         <EnfoqueYServicios />
         <SobreMiPreview />
-        <HomoSapiens />
+        {/* <HomoSapiens /> -- Oculto temporalmente para uso futuro */}
         <CTA />
         <ContactoSection />
       </main>

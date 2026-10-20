@@ -7,6 +7,7 @@ import {
   CheckCircle,
   AlertCircle,
   Loader,
+  ArrowDown,
 } from "lucide-react";
 import { sendContactEmail } from "@/services/emailService";
 
@@ -55,9 +56,12 @@ export function ContactoSection() {
         <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 items-start">
           {/* Texto Izquierdo */}
           <div className="lg:col-span-5 space-y-6">
-            <span className="text-[10px] sm:text-[11px] font-bold tracking-[0.22em] text-[#C8A46A] uppercase">
-              CONTACTO DIRECTO
-            </span>
+            <div className="flex items-center gap-2">
+              <span className="text-sm sm:text-base lg:text-[16px] font-bold tracking-[0.24em] text-[#C8A46A] uppercase">
+                CONTACTO DIRECTO
+              </span>
+              <ArrowDown className="w-4 h-4 text-[#C8A46A] animate-bounce" />
+            </div>
 
             <h2
               className="text-3xl sm:text-4xl font-normal text-[#10253F] leading-tight"
@@ -85,7 +89,12 @@ export function ContactoSection() {
                 </div>
               </div>
 
-              <div className="flex items-center gap-4 group">
+              <a
+                href="https://wa.me/593969130775"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-4 group"
+              >
                 <div className="w-10 h-10 rounded-xl bg-white border border-[#10253F]/10 flex items-center justify-center flex-shrink-0 text-[#C8A46A] group-hover:text-[#10253F] transition-colors shadow-sm">
                   <Phone className="w-4 h-4 stroke-[1.75]" />
                 </div>
@@ -93,11 +102,16 @@ export function ContactoSection() {
                   <h4 className="text-xs font-semibold text-[#10253F]">
                     Teléfono / WhatsApp
                   </h4>
-                  <p className="text-xs text-[#10253F]/70">+593 96 913 0775</p>
+                  <p className="text-xs text-[#10253F]/70 group-hover:text-[#C8A46A] transition-colors">
+                    +593 96 913 0775
+                  </p>
                 </div>
-              </div>
+              </a>
 
-              <div className="flex items-center gap-4 group">
+              <a
+                href="mailto:yhlqmdlgale13@gmail.com"
+                className="flex items-center gap-4 group"
+              >
                 <div className="w-10 h-10 rounded-xl bg-white border border-[#10253F]/10 flex items-center justify-center flex-shrink-0 text-[#C8A46A] group-hover:text-[#10253F] transition-colors shadow-sm">
                   <Mail className="w-4 h-4 stroke-[1.75]" />
                 </div>
@@ -105,9 +119,11 @@ export function ContactoSection() {
                   <h4 className="text-xs font-semibold text-[#10253F]">
                     Correo Electrónico
                   </h4>
-                  <p className="text-xs text-[#10253F]/70">alecis13@hotmail.com</p>
+                  <p className="text-xs text-[#10253F]/70 group-hover:text-[#C8A46A] transition-colors">
+                    yhlqmdlgale13@gmail.com
+                  </p>
                 </div>
-              </div>
+              </a>
             </div>
           </div>
 

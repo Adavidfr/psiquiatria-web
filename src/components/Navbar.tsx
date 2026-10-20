@@ -20,8 +20,9 @@ export function Navbar() {
     { label: "Enfoque NODO", href: "#enfoque-nodo", id: "enfoque-nodo" },
     { label: "Servicios", href: "#servicios", id: "servicios" },
     { label: "Sobre mí", href: "#sobre-mi", id: "sobre-mi" },
-    { label: "Homo sapiens", href: "#homo-sapiens", id: "homo-sapiens" },
-    { label: "Recursos", href: "#homo-sapiens", id: "recursos" },
+    // Ocultos temporalmente para uso futuro:
+    // { label: "Homo sapiens", href: "#homo-sapiens", id: "homo-sapiens" },
+    // { label: "Recursos", href: "#homo-sapiens", id: "recursos" },
     { label: "Contacto", href: "#contacto", id: "contacto" },
   ];
 
@@ -39,25 +40,25 @@ export function Navbar() {
           <a
             href="#inicio"
             aria-label="NODO - Inicio"
-            className="flex items-center gap-3 group select-none"
+            className="flex items-center gap-3.5 sm:gap-4 group select-none"
           >
             <img
               src={logo}
               alt="Logo NODO"
-              className="w-10 h-10 sm:w-11 sm:h-11 object-contain flex-shrink-0 transition-transform duration-300 group-hover:scale-105"
+              className="w-12 h-12 sm:w-14 sm:h-14 object-contain flex-shrink-0 transition-transform duration-300 group-hover:scale-105"
             />
-            <div className="flex flex-col">
+            <div className="flex flex-col justify-center">
               <span
-                className="font-serif text-[#10253F] tracking-[0.35em] text-base sm:text-lg font-normal leading-tight"
+                className="font-serif text-[#10253F] tracking-[0.32em] text-lg sm:text-2xl font-normal leading-none mb-1"
                 style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
               >
                 NODO
               </span>
-              <span className="text-[#10253F]/80 text-[8px] sm:text-[9px] tracking-[0.18em] uppercase font-semibold leading-tight">
+              <span className="text-[#10253F]/80 text-[9px] sm:text-[10.5px] tracking-[0.2em] uppercase font-semibold leading-tight">
                 NETWORK-BASED PSYCHIATRY
               </span>
               <span
-                className="italic text-[#C8A46A] text-[10px] sm:text-[11px] leading-tight font-serif"
+                className="italic text-[#C8A46A] text-[11px] sm:text-[12.5px] leading-tight font-serif"
                 style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
               >
                 by Alejandra Castillo

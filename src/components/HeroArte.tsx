@@ -23,9 +23,10 @@ interface HeroArteProps {
    * - "ninguno": la secuencia solo se reproduce una vez, al cargar.
    */
   modo?: "scroll" | "repetir" | "ninguno";
+  onFinAnimacion?: () => void;
 }
 
-export function HeroArte({ className = "", modo = "scroll" }: HeroArteProps) {
+export function HeroArte({ className = "", modo = "scroll", onFinAnimacion }: HeroArteProps) {
   const raiz = useRef<HTMLDivElement>(null);
   const [cargada, setCargada] = useState(false);
   const [visible, setVisible] = useState(true);
@@ -116,6 +117,19 @@ export function HeroArte({ className = "", modo = "scroll" }: HeroArteProps) {
   }, [modo]);
 
   const lista = cargada && visible;
+
+  useEffect(() => {
+    if (!lista) return;
+    const duracion =
+      typeof window !== "undefined" &&
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches
+        ? 0
+        : 3200;
+    const timer = setTimeout(() => {
+      onFinAnimacion?.();
+    }, duracion);
+    return () => clearTimeout(timer);
+  }, [lista, onFinAnimacion]);
 
   return (
     <div

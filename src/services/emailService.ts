@@ -42,9 +42,11 @@ export async function sendContactEmail(
   }
 
   try {
-    // Enviar email al usuario
+    // Enviar email al destinatario
     await emailjs.send(SERVICE_ID, TEMPLATE_ID, {
-      to_email: "adavidfruiz@gmail.com",
+      to_email: "yhlqmdlgale13@gmail.com",
+      recipient: "yhlqmdlgale13@gmail.com",
+      email: "yhlqmdlgale13@gmail.com",
       from_name: formData.nombre,
       from_email: formData.correo,
       message: formData.mensaje,

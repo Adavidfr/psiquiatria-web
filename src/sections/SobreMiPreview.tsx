@@ -4,11 +4,12 @@ import {
   BookOpen,
   Globe,
   ArrowRight,
+  ArrowDown,
   Sparkles,
+  Users,
 } from "lucide-react";
 import aboutImage from "@/imports/about.jpg";
 import firmaImage from "@/imports/firma.png";
-import plantaImage from "@/imports/planta.png";
 import { ImageWithFallback } from "@/components/utils/ImageWithFallback";
 
 export function SobreMiPreview() {
@@ -16,22 +17,22 @@ export function SobreMiPreview() {
     {
       icon: GraduationCap,
       title: "Especialista en Psiquiatría",
-      institution: "Universidad UTE",
-    },
-    {
-      icon: Stethoscope,
-      title: "Médico General",
-      institution: "Universidad Nacional de Loja",
-    },
-    {
-      icon: BookOpen,
-      title: "Maestría en Educación (en curso)",
-      institution: "Universidad Casa Grande",
+      institution: "Médico psiquiatra",
     },
     {
       icon: Globe,
-      title: "Nivel de Inglés C1",
-      institution: "Competencia profesional avanzada",
+      title: "Prácticas profesionales externas",
+      institution: "Hospital Miguel Servet (España) y Hospital Santa Fé (Panamá)",
+    },
+    {
+      icon: BookOpen,
+      title: "Docente universitaria",
+      institution: "Psiquiatría en pregrado y posgrado",
+    },
+    {
+      icon: Users,
+      title: "Actualización y formación continua",
+      institution: "Neurociencia, psicofarmacología, psicogeriatría y educación en salud mental",
     },
   ];
 
@@ -40,16 +41,6 @@ export function SobreMiPreview() {
       id="sobre-mi"
       className="relative py-16 sm:py-24 bg-[#FAF8F5] border-t border-[#10253F]/10 overflow-hidden"
     >
-      {/* Marca de agua botánica anclada abajo a la derecha, desplazada hacia la derecha */}
-      <div className="absolute -bottom-4 right-0 translate-x-[20%] w-48 sm:w-56 lg:w-64 pointer-events-none select-none z-0 opacity-40 sm:opacity-45 mix-blend-multiply">
-        <img
-          src={plantaImage}
-          alt=""
-          role="presentation"
-          className="w-full h-auto object-contain object-bottom-right filter contrast-[0.65] brightness-[1.03]"
-        />
-      </div>
-
       <div className="relative z-10 max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-12 gap-10 lg:gap-14 items-start">
           {/* Columna Izquierda: Imagen del alto de la sección (solo desktop) */}
@@ -68,10 +59,10 @@ export function SobreMiPreview() {
             {/* SECCIÓN 1: Identidad y Biografía */}
             <div className="space-y-5">
               <div className="flex items-center gap-2">
-                <span className="text-[10px] sm:text-[11px] font-bold tracking-[0.25em] text-[#C8A46A] uppercase">
+                <span className="text-sm sm:text-base lg:text-[16px] font-bold tracking-[0.24em] text-[#C8A46A] uppercase">
                   SOBRE MÍ
                 </span>
-                <span className="w-8 h-px bg-[#C8A46A]/50" />
+                <ArrowDown className="w-4 h-4 text-[#C8A46A] animate-bounce" />
               </div>
 
               <div>
@@ -82,14 +73,16 @@ export function SobreMiPreview() {
                   Alejandra Castillo
                 </h2>
                 <p className="text-base sm:text-lg font-medium text-[#C8A46A] mt-1 font-serif italic">
-                  Médico psiquiatra
+                  Humano - Médico - Psiquiatra
                 </p>
               </div>
 
               <div className="space-y-4 text-sm sm:text-base text-[#10253F]/85 leading-relaxed text-justify">
                 <p>
-                  Creo en una psiquiatría que escucha, que integra la ciencia con la experiencia humana 
-                  y que entiende que cada persona es una historia única.
+                 Mi práctica clínica parte de una convicción: comprender la salud mental requiere mirar más allá de los síntomas.
+                 Integro neurociencia, desarrollo humano e historia de vida para comprender la complejidad de cada experiencia
+                  emocional. Desde una perspectiva científica, ética y humana, busco construir una atención psiquiátrica precisa,
+                  individualizada y respetuosa de la singularidad de cada persona.
                 </p>
               </div>
 
@@ -149,9 +142,9 @@ export function SobreMiPreview() {
                   className="text-lg sm:text-xl font-serif italic text-[#10253F] leading-relaxed max-w-xl"
                   style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
                 >
-                  “La ciencia nos ayuda a comprender.
+                  “Comprender a una persona implica reconocer las conexiones entre
                   <br className="hidden sm:inline" />
-                  {" "}La empatía nos permite acompañar.”
+                  {" "}  su cerebro, su historia y el mundo que habita.”
                 </blockquote>
 
                 {/* Firma manuscrita proporcionada y alineada a la derecha */}

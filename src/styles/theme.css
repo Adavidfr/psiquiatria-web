@@ -87,7 +87,12 @@
     overflow-x: hidden;
   }
 
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     font-family: var(--font-serif);
     color: var(--nodo-navy);
   }
@@ -98,6 +103,7 @@
     opacity: 0;
     transform: translateY(16px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -105,13 +111,15 @@
 }
 
 @keyframes pulseGlow {
-  0%, 100% {
-    opacity: 0.4;
+  0%,
+  100% {
+    opacity: 0.35;
     transform: scale(1);
   }
+
   50% {
-    opacity: 0.8;
-    transform: scale(1.05);
+    opacity: 0.75;
+    transform: scale(1.04);
   }
 }
 
@@ -121,4 +129,22 @@
 
 .animate-pulse-glow {
   animation: pulseGlow 4s ease-in-out infinite;
+}
+
+@keyframes heroWordFadeIn {
+  0% {
+    opacity: 0;
+    filter: blur(4px);
+    pointer-events: none;
+  }
+  100% {
+    opacity: 1;
+    filter: blur(0);
+    pointer-events: auto;
+  }
+}
+
+.hero-word-appear {
+  opacity: 0;
+  animation: heroWordFadeIn 0.8s cubic-bezier(0.22, 0.61, 0.36, 1) both;
 }
