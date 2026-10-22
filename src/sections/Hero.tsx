@@ -129,8 +129,8 @@ export function Hero() {
             </div>
           </div>
 
-          {/* Columna Derecha / Palabras clave desordenadas que aparecen al final de la animación */}
-          <div className="order-2 lg:order-2 lg:col-span-5 flex justify-end items-center self-center w-full">
+          {/* Columna Derecha / Palabras clave desordenadas: oculto únicamente en mobile vertical (portrait) */}
+          <div className="order-2 lg:order-2 lg:col-span-5 hidden landscape:flex lg:flex justify-end items-center self-center w-full">
             <div className="relative w-full max-w-[340px] sm:max-w-[420px] lg:max-w-[460px] h-[360px] sm:h-[420px] lg:h-[480px] select-none ml-auto">
               {palabrasHero.map((p) => (
                 <span

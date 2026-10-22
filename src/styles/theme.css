@@ -111,6 +111,7 @@
 }
 
 @keyframes pulseGlow {
+
   0%,
   100% {
     opacity: 0.35;
@@ -137,6 +138,7 @@
     filter: blur(4px);
     pointer-events: none;
   }
+
   100% {
     opacity: 1;
     filter: blur(0);
@@ -147,4 +149,23 @@
 .hero-word-appear {
   opacity: 0;
   animation: heroWordFadeIn 0.8s cubic-bezier(0.22, 0.61, 0.36, 1) both;
+}
+
+/* ===============================================================
+   Sobre Mí: Solo Mobile Horizontal (Landscape < 1024px)
+   Credenciales y Cita con firma a ancho completo de la pantalla
+   =============================================================== */
+@media (orientation: landscape) and (max-width: 1023px) {
+  .sobre-mi-right-col {
+    display: contents !important;
+  }
+
+  .sobre-mi-bio {
+    grid-column: span 7 / span 7 !important;
+  }
+
+  .sobre-mi-full-width {
+    grid-column: 1 / -1 !important;
+    width: 100% !important;
+  }
 }

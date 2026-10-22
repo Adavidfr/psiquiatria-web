@@ -109,7 +109,7 @@ export function ContactoSection() {
               </a>
 
               <a
-                href="mailto:yhlqmdlgale13@gmail.com"
+                href="mailto:nodopsiquiatria@gmail.com"
                 className="flex items-center gap-4 group"
               >
                 <div className="w-10 h-10 rounded-xl bg-white border border-[#10253F]/10 flex items-center justify-center flex-shrink-0 text-[#C8A46A] group-hover:text-[#10253F] transition-colors shadow-sm">
@@ -120,7 +120,7 @@ export function ContactoSection() {
                     Correo Electrónico
                   </h4>
                   <p className="text-xs text-[#10253F]/70 group-hover:text-[#C8A46A] transition-colors">
-                    yhlqmdlgale13@gmail.com
+                    nodopsiquiatria@gmail.com
                   </p>
                 </div>
               </a>

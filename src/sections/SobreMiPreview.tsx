@@ -42,10 +42,10 @@ export function SobreMiPreview() {
       className="relative py-16 sm:py-24 bg-[#FAF8F5] border-t border-[#10253F]/10 overflow-hidden"
     >
       <div className="relative z-10 max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-12 gap-10 lg:gap-14 items-start">
-          {/* Columna Izquierda: Imagen del alto de la sección (solo desktop) */}
-          <div className="hidden lg:block lg:col-span-5 lg:sticky lg:top-24">
-            <div className="relative w-full h-[450px] sm:h-[550px] lg:h-[720px] rounded-2xl overflow-hidden shadow-xl border border-[#10253F]/10">
+        <div className="grid landscape:grid-cols-12 lg:grid-cols-12 gap-8 lg:gap-14 items-start">
+          {/* Columna Izquierda: Imagen del alto de la sección (desktop y mobile horizontal) */}
+          <div className="hidden landscape:block lg:block landscape:col-span-5 lg:col-span-5 landscape:sticky lg:sticky landscape:top-20 lg:top-24">
+            <div className="relative w-full h-[450px] landscape:max-lg:h-[340px] sm:h-[550px] lg:h-[720px] rounded-2xl overflow-hidden shadow-xl border border-[#10253F]/10">
               <ImageWithFallback
                 src={aboutImage}
                 alt="Dra. Alejandra Castillo - Médico Psiquiatra"
@@ -55,9 +55,9 @@ export function SobreMiPreview() {
           </div>
 
           {/* Columna Derecha: Todo el contenido en secciones verticales */}
-          <div className="lg:col-span-7 space-y-10">
+          <div className="landscape:col-span-7 lg:col-span-7 space-y-10 sobre-mi-right-col">
             {/* SECCIÓN 1: Identidad y Biografía */}
-            <div className="space-y-5">
+            <div className="space-y-5 sobre-mi-bio">
               <div className="flex items-center gap-2">
                 <span className="text-sm sm:text-base lg:text-[16px] font-bold tracking-[0.24em] text-[#C8A46A] uppercase">
                   SOBRE MÍ
@@ -86,8 +86,8 @@ export function SobreMiPreview() {
                 </p>
               </div>
 
-              {/* Imagen visible SOLO en mobile: colocada después de "Creo en una psiquiatría que escucha", sin recortar */}
-              <div className="block lg:hidden pt-2">
+              {/* Imagen visible SOLO en mobile vertical (portrait): en horizontal se muestra a la izquierda */}
+              <div className="block landscape:hidden lg:hidden pt-2">
                 <div className="relative w-full rounded-2xl overflow-hidden shadow-xl border border-[#10253F]/10">
                   <ImageWithFallback
                     src={aboutImage}
@@ -99,7 +99,7 @@ export function SobreMiPreview() {
             </div>
 
             {/* SECCIÓN 2: Credenciales y Formación Profesional */}
-            <div className="space-y-4 pt-4 border-t border-[#10253F]/10">
+            <div className="space-y-4 pt-4 border-t border-[#10253F]/10 sobre-mi-full-width sobre-mi-credenciales">
               <div className="flex items-center gap-2">
                 <Sparkles className="w-4 h-4 text-[#C8A46A]" />
                 <h3
@@ -136,7 +136,7 @@ export function SobreMiPreview() {
             </div>
 
             {/* SECCIÓN 3: Filosofía y Tarjeta de Cita con Firma a la Derecha (Sin imagen de fondo) */}
-            <div className="pt-4 border-t border-[#10253F]/10">
+            <div className="pt-4 border-t border-[#10253F]/10 sobre-mi-full-width">
               <div className="relative p-6 sm:p-7 rounded-2xl bg-[#F5F2EC] border border-[#10253F]/10 shadow-sm overflow-hidden flex flex-col justify-between space-y-4">
                 <blockquote
                   className="text-lg sm:text-xl font-serif italic text-[#10253F] leading-relaxed max-w-xl"

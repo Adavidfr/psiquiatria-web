@@ -215,6 +215,22 @@
   }
 }
 
+/* Celular en horizontal (landscape): imagen del hero más pequeña y en el lado derecho */
+@media (orientation: landscape) and (max-width: 1023px) {
+  .hero-arte__capa {
+    width: 52%;
+    left: auto;
+    right: 0;
+    height: 90%;
+    top: 5%;
+  }
+
+  .hero-arte__img {
+    object-fit: contain;
+    object-position: right center;
+  }
+}
+
 /* Celular: secuencia un poco más corta y menos desenfoque */
 @media (max-width: 768px) {
   .hero-arte {

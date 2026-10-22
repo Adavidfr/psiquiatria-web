@@ -24,7 +24,7 @@ NODO propone una psiquiatría basada en redes y conexiones que entiende que la e
 - **Diagrama Radial Interactivo ("Mi Enfoque"):** Representación geométrica viva de los 4 pilares con ilustraciones transparentes personalizadas y efecto de pulsación orgánica (`pulseGlow`).
 - **Servicios Clínicos Especializados:** Catálogo estructurado en tarjetas de alta legibilidad para evaluación integral, adolescentes y jóvenes, adultos, psicogeriatría, segunda opinión y orientación a familias.
 - **Sección Biográfica & Credenciales:** Perfil profesional de la especialista, formación de posgrado, rotaciones internacionales y trayectoria docente con iconografía unificada.
-- **Formulario de Contacto Funcional (EmailJS):** Formulario con validación en tiempo real y envío directo al correo oficial (`yhlqmdlgale13@gmail.com`).
+- **Formulario de Contacto Funcional (EmailJS):** Formulario con validación en tiempo real y envío directo al correo oficial (`nodopsiquiatria@gmail.com`).
 - **Botón Flotante Inteligente (`FloatingCTA`):** Acceso permanente a agendamiento por WhatsApp con detección automática vía `IntersectionObserver`: desaparece al entrar en la sección de llamada a la acción principal para evitar redundancia visual y reaparece al salir de ella.
 - **100% Responsivo:** Adaptabilidad perfecta para smartphones, tablets y pantallas de escritorio.
 - **Arquitectura Modular:** Componentes desacoplados, sección de blog/recursos (*Homo Sapiens*) preparada para futura activación.
@@ -113,7 +113,7 @@ VITE_EMAILJS_SERVICE_ID=tu_service_id_aqui
 VITE_EMAILJS_TEMPLATE_ID=tu_template_id_aqui
 ```
 
-> **Nota:** El servicio de correo está configurado para remitir los mensajes a `yhlqmdlgale13@gmail.com`.
+> **Nota:** El servicio de correo está configurado para remitir los mensajes a `nodopsiquiatria@gmail.com`.
 
 ### 4. Ejecutar en modo desarrollo
 ```bash
@@ -142,7 +142,7 @@ Los archivos optimizados para despliegue se generarán en la carpeta `dist/`.
 
 - **Ubicación:** Quito, Ecuador (Modalidad: Presencial / Online / Domicilio)
 - **WhatsApp Directo:** [+593 96 913 0775](https://wa.me/593969130775)
-- **Correo Electrónico:** [yhlqmdlgale13@gmail.com](mailto:yhlqmdlgale13@gmail.com)
+- **Correo Electrónico:** [nodopsiquiatria@gmail.com](mailto:nodopsiquiatria@gmail.com)
 
 ---
 
